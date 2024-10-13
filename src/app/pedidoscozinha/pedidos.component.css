@@ -1,0 +1,19 @@
+.pedidos {
+    padding: 20px;
+  }
+  
+  .pedido {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  h2 {
+    color: #555;
+  }
+  

@@ -1,0 +1,12 @@
+<div class="pedidos">
+    <h1>Pedidos</h1>
+  
+    <div class="pedido" *ngFor="let pedido of pedidos">
+      <h2>ID - {{ pedido.id }}</h2>
+      <div *ngFor="let item of pedido.itens">
+        <p>{{ item.nome }} {{ item.quantidade }}x</p>
+        <p>{{ item.descricao }}</p>
+      </div>
+    </div>
+  </div>
+  
