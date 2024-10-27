@@ -1,0 +1,79 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+  }
+  
+  
+  .cardapio {
+      width: 100%;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      margin: 25px 25px;
+    }
+    
+    .item img {
+      width: 113px;
+      height: 79px;
+      border-radius: 10px;
+      margin-left: 10px;
+    }
+    
+    .info {
+      flex: 1;
+      text-align: left;
+    }
+    
+    .info h2 {
+      font-size: 18px;
+      margin: 0;
+    }
+    
+    .info p {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #706E6E;
+    }
+    
+    .info span {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .lapis{
+      transform: scale(0.2);
+    }
+
+    button:hover{
+      background-color:  #ca5507;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #ff6600;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 100px;
+    
+
+      
+    }
+    
