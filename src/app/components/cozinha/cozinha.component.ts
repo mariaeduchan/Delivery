@@ -1,18 +1,19 @@
-// src/app/components/dish-list/dish-list.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { DishService, Dish } from '../../services/dish.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+
+
+
 @Component({
-  selector: 'app-dish-list',
-  templateUrl: './dish-list.component.html',
-  styleUrls: ['./dish-list.component.css'],
+  selector: 'app-cozinha',
+  templateUrl: './cozinha.component.html',
+  styleUrls: ['./cozinha.component.css'],
   standalone: true,
   imports: [CommonModule, RouterModule]
 })
-export class DishListComponent implements OnInit {
+export class CozinhaComponent implements OnInit {
   dishes: Dish[] = [];
 
   constructor(private dishService: DishService) {}
@@ -32,4 +33,13 @@ export class DishListComponent implements OnInit {
       this.loadDishes();
     });
   }
+
+  selectStatus(dishId: number | undefined, status: string): void {
+    if (dishId !== undefined) {
+      console.log(`Dish ID: ${dishId}, Status: ${status}`);
+      // Adicione a lógica para atualizar o status do prato aqui, se necessário
+    }
+  }
 }
+
+
