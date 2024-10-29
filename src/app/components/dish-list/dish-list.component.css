@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d9d9d9;
+    margin: 0;
+    padding: 0;
+  }
+  
+ 
+  
+  .pedido {
+    background-color: #fff;
+    color: #000;
+    width: 300px;
+    margin: 20px auto;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pedido-id {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .pedido-item {
+    margin-bottom: 10px;
+  }
+  
+  .item-nome {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .item-quantidade {
+    font-weight: normal;
+  }
+  
+  .item-descricao {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  .status-dropdown {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .status-button {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    position: relative;
+  }
+  
+  .dropdown-icon {
+    margin-left: 10px;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-align: left;
+  }
+  
+  .status-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #555;
+  }
+  

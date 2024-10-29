@@ -1,0 +1,35 @@
+<!-- src/app/components/dish-list/dish-list.component.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Delivery</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="cozinha.component.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Pedidos</h1>
+  </div>
+  <div class="container">
+    
+    <div *ngFor="let dish of dishes" class="pedido">
+      <h2 class="pedido-id">ID - {{ dish.id }}</h2>
+      <div class="pedido-item">
+        <p class="item-nome">{{ dish.name }} <span class="item-quantidade">1x</span></p>
+        <p class="item-descricao">{{ dish.description }}</p>
+      </div>
+      <div class="status-dropdown">
+        <button class="status-button">STATUS <span class="dropdown-icon">▼</span></button>
+        <div class="dropdown-menu">
+          <a href="#" (click)="selectStatus(dish.id, 'FEITO')">FEITO</a>
+          <a href="#" (click)="selectStatus(dish.id, 'ENVIADO P/ ENTREGA')">ENVIADO P/ ENTREGA</a>
+          <a href="#" (click)="selectStatus(dish.id, 'ENTREGUE')">ENTREGUE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
