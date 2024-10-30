@@ -9,29 +9,28 @@
   <link rel="stylesheet" href="dish-list.component.css">
 </head>
 <body>
-  <div class="header">
-    <h1>Pedidos</h1>
-  </div>
+  <div class="cardapio">
+    <h1>Cardápio</h1>
   
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Actions</th>
-    </tr>
-    <tr *ngFor="let dish of dishes">
-      <td>{{ dish.id }}</td>
-      <td>{{ dish.name }}</td>
-      <td>{{ dish.description }}</td>
-      <td>{{ dish.price }}</td>
-      <td>
-        <button (click)="deleteDish(dish.id!)">Delete</button>
-        <a [routerLink]="['/edit-dish', dish.id]">Edit</a>
-      </td>
-    </tr>
-  </table>
-  <a routerLink="/add-dish">Add New Dish</a>
+    <div *ngFor="let dish of dishes" class="item">
+      <div class="info">
+        <h2>{{ dish.name }}</h2>
+        <p>{{ dish.description }}</p>
+        <span>R$ {{ dish.price }}</span>
+      </div>
+      
+      <div class="actions">
+        <a [routerLink]="['/edit-dish', dish.id]">
+          <img src="ferramenta-lapis.png" alt="editar" class="lapis">
+        </a>
+      </div>
+      
+      <img [src]="dish.image" alt="{{ dish.name }}">
+    </div>
+    
+    <div class="botao">
+      <button><a routerLink="/add-dish">Cadastrar</a></button>
+    </div>
+  </div>   
 </body>
 </html>

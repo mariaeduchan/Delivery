@@ -1,0 +1,7 @@
+.container {
+    max-width: 400px; /* Altere o valor conforme necessário */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 0 16px;
+    max-height: 800px; /* Adiciona um espaçamento nas laterais */
+  }
+  
