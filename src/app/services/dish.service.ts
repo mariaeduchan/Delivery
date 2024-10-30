@@ -7,6 +7,7 @@ export interface Dish {
   name: string;
   description: string;
   price: number;
+  image: string;
 }
 
 @Injectable({
@@ -24,13 +25,15 @@ export class DishService {
         id: 1212,
         name: 'Cheddar Burguer',
         description: 'Pão, 1 carne, 3 fatias de queijo cheddar, tomate, alface e cebola',
-        price: 12.99
+        price: 12.99,
+        image: 'https://temperonapanela.com.br/wp-content/uploads/28_05-blog.png',
       },
       {
         id: 1452,
         name: 'Chicken Burguer',
         description: 'Pão, filé de frango, 1 fatia de queijo, tomate, alface e cebola',
-        price: 15.99
+        price: 15.99,
+        image: 'https://assets.bonappetit.com/photos/62b5fec6094fcaa09e5a30ea/1:1/w_2560%2Cc_limit/BA0822chintan06.jpg',
       }
     ];
     return of(fakeDishes); // Usando 'of' para retornar um Observable com os dados fictícios

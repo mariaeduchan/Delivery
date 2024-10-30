@@ -10,7 +10,8 @@ import { RouterModule } from '@angular/router';
   templateUrl: './dish-list.component.html',
   styleUrls: ['./dish-list.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterModule]
+  imports: [CommonModule, RouterModule],
+  
 })
 export class DishListComponent implements OnInit {
   dishes: Dish[] = [];

@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+/* Define um limite de largura para o contêiner principal */
+.container {
+    max-width: 360px; /* Altere o valor conforme necessário */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 0 16px;
+    max-height: 800px; /* Adiciona um espaçamento nas laterais */
+  }
+  
