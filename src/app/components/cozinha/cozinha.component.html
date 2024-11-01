@@ -23,9 +23,9 @@
           {{ selectedStatus[dish.id] || 'STATUS' }} <span class="dropdown-icon">▼</span>
         </button>
         <div *ngIf="dish.id !== undefined" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item feito" href="#" (click)="selectStatus(dish.id, 'FEITO')">FEITO</a>
-          <a class="dropdown-item enviado" href="#" (click)="selectStatus(dish.id, 'ENVIADO P/ ENTREGA')">ENVIADO P/ ENTREGA</a>
-          <a class="dropdown-item entregue" href="#" (click)="selectStatus(dish.id, 'ENTREGUE')">ENTREGUE</a>
+          <a class="dropdown-item feito" href="#" (click)="selectStatus($event, dish.id, 'FEITO')">FEITO</a>
+          <a class="dropdown-item enviado" href="#" (click)="selectStatus($event, dish.id, 'ENVIADO P/ ENTREGA')">ENVIADO P/ ENTREGA</a>
+          <a class="dropdown-item entregue" href="#" (click)="selectStatus($event, dish.id, 'ENTREGUE')">ENTREGUE</a>
         </div>
       </div>
     </div>

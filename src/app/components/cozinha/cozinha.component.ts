@@ -23,6 +23,12 @@ export class CozinhaComponent implements OnInit {
   loadDishes() {
     this.dishService.getDishes().subscribe((data: Dish[]) => {
       this.dishes = data;
+      // Inicializa o status para todos os pratos
+      data.forEach(dish => {
+        if (dish.id !== undefined) {
+          this.selectedStatus[dish.id] = 'STATUS'; // Valor inicial do status
+        }
+      });
     });
   }
 
@@ -32,7 +38,8 @@ export class CozinhaComponent implements OnInit {
     });
   }
 
-  selectStatus(dishId: number | undefined, status: string): void {
+  selectStatus(event: Event, dishId: number | undefined, status: string): void {
+    event.preventDefault(); // Impede a navegação
     if (dishId !== undefined) {
       this.selectedStatus[dishId] = status;
       console.log(`Dish ID: ${dishId}, Status: ${status}`);
@@ -41,13 +48,13 @@ export class CozinhaComponent implements OnInit {
 
   getStatusClass(dishId: number | undefined): string {
     if (dishId !== undefined) {
-      switch (this.selectedStatus[dishId] || 'STATUS') {
+      switch (this.selectedStatus[dishId]) {
         case 'FEITO':
-          return 'feito';
+          return 'FEITO';
         case 'ENVIADO P/ ENTREGA':
-          return 'enviado';
+          return 'ENVIADO';
         case 'ENTREGUE':
-          return 'entregue';
+          return 'ENTREGUE';
         default:
           return '';
       }

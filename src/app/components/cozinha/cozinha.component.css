@@ -4,25 +4,33 @@ body {
   font-family: Arial, sans-serif;
   background-color: #d9d9d9; /* Fundo #d9d9d9 */
   color: #fff; /* Texto branco */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+  overflow: hidden; /* Remove as barras de rolagem */
 }
 
 .container {
   text-align: center;
   padding: 49px;
+  flex-grow: 1; /* Faz a container crescer para preencher o espaço restante */
+  overflow-y: auto; /* Permite a rolagem vertical */
 }
 
 .header {
   background-color: #000; /* Fundo preto */
   color: #fff;
-  padding-top: 1px;
-  text-align: top;
+  text-align: center;
   top: 0; /* Colando no topo */
   z-index: 1000;
   height: 56.06px;
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
 }
 
 .header h1 {
-  text-align: center;
+  margin: 0; /* Remove a margem padrão */
 }
 
 .pedido {
@@ -38,6 +46,7 @@ body {
   margin-bottom: 10px;
   padding-bottom: 1px;
   align-items: top;
+  text-align: center; /* Centraliza o texto do ID */
 }
 
 .pedido-item {
@@ -48,7 +57,7 @@ body {
 
 .item-nome {
   font-weight: regular;
-  text-align: left;
+  text-align: center; /* Centraliza o texto */
   font-size: 18px;
 }
 
@@ -56,7 +65,7 @@ body {
   font-size: 10px;
   font-style: italic;
   color: #706E6e;
-  text-align: left;
+  text-align: center; /* Centraliza o texto */
 }
 
 .status-dropdown {
@@ -64,52 +73,48 @@ body {
   width: 262px;
   max-height: 300px;
   margin: 0 auto; /* Centraliza o dropdown */
-  text-align: center; 
-  
+  text-align: center;
 }
 
 .status-button {
   background-color: #000; /* Botão dropdown com fundo preto */
   color: #fff;
   border: none;
-  align-items: center;
   cursor: pointer;
   width: 238px;
   height: 30px;
   margin: 0 auto; /* Centraliza o botão */
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Adiciona espaço entre o texto e a seta */
+  padding: 0 10px; /* Adiciona espaço interno nas laterais */
+  white-space: nowrap; /* Garante que o texto não quebre a linha */
+  overflow: hidden; /* Esconde qualquer texto que ultrapasse os limites do botão */
 }
 
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
-  min-width: 9px;
-  margin: 0 auto; /* Centraliza o dropdown */
-  text-align: center; 
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza o dropdown com o botão */
+  min-width: 238px;
 }
 
 .status-dropdown:hover .dropdown-menu {
   display: block;
-  margin: 0 auto; /* Centraliza o dropdown */
-  text-align: center;  /* Mostrar o menu dropdown ao passar o mouse */
 }
 
 .dropdown-item {
   color: #fff;
-  text-align: center;
-  align-items: center;
-  padding: 5px 6px ;
-  padding-left: 6px;
-  display: block;
+  padding: 10px 0; /* Adiciona espaço vertical interno */
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
   text-decoration: none;
-  width: 238px;
+  width: 100%; /* Garante que o item ocupe toda a largura */
   height: 30px;
-  margin: 0 auto; /* Centraliza o dropdown */
-  text-align: center; 
+  white-space: nowrap; /* Garante que o texto não quebre a linha */
 }
 
 .dropdown-item.feito {
@@ -123,7 +128,6 @@ body {
 .dropdown-item.entregue {
   background-color: green;
 }
-
 
 .FEITO {
   background-color: red;
