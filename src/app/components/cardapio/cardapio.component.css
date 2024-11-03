@@ -1,0 +1,56 @@
+/* cardapio.component.css */
+
+.menu-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 36px;
+  }
+  
+  .carrinho {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .produto h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .produto img {
+    width: 150px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer; /* Adicione um cursor pointer para indicar que a imagem é clicável */
+  }
+  
+  .produto p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  

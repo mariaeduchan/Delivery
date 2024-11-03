@@ -1,25 +1,27 @@
-// src/app/components/dish-form/dish-form.component.ts
-
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { DishService, Dish } from '../../services/dish.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dish-form',
   templateUrl: './dish-form.component.html',
   styleUrls: ['./dish-form.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule]
+  imports: [FormsModule, CommonModule, RouterModule]
 })
 export class DishFormComponent implements OnInit {
   dish: Dish = {
+    id: 0,
     name: '',
     description: '',
     price: 0,
     image: '',
+    quantity: 1
   };
+
   isEdit: boolean = false;
 
   constructor(
@@ -38,9 +40,9 @@ export class DishFormComponent implements OnInit {
     }
   }
 
-  saveDish() {
+  saveDish(): void {
     if (this.isEdit) {
-      this.dishService.updateDish(this.dish.id!, this.dish).subscribe(() => {
+      this.dishService.updateDish(this.dish.id, this.dish).subscribe(() => {
         this.router.navigate(['/']);
       });
     } else {

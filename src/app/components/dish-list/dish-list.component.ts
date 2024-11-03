@@ -1,5 +1,3 @@
-// src/app/components/dish-list/dish-list.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { DishService, Dish } from '../../services/dish.service';
 import { CommonModule } from '@angular/common';
@@ -10,8 +8,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './dish-list.component.html',
   styleUrls: ['./dish-list.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterModule],
-  
+  imports: [CommonModule, RouterModule]
 })
 export class DishListComponent implements OnInit {
   dishes: Dish[] = [];
@@ -22,15 +19,15 @@ export class DishListComponent implements OnInit {
     this.loadDishes();
   }
 
-  loadDishes() {
+  loadDishes(): void {
     this.dishService.getDishes().subscribe((data: Dish[]) => {
       this.dishes = data;
     });
   }
 
-  deleteDish(id: number) {
+  deleteDish(id: number): void {
     this.dishService.deleteDish(id).subscribe(() => {
-      this.loadDishes();
+      this.dishes = this.dishes.filter(dish => dish.id !== id);
     });
   }
 }
