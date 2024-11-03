@@ -35,7 +35,7 @@ header h1 {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     margin: 0;
@@ -102,5 +102,9 @@ input, textarea {
 
 h3 {
     margin-top: 80px;
-    
+    font-size: 15px;
+}
+
+label {
+    font-size: 15px;
 }
