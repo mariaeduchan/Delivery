@@ -15,13 +15,13 @@
     
         <form (ngSubmit)="onSubmit()">
             <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" placeholder="Digite seu nome aqui">
+            <input type="text" id="name" name="name">
 
             <label for="address">Logradouro:</label>
-            <input type="text" id="address" name="address" placeholder="Digite seu logradouro aqui">
+            <input type="text" id="address" name="address">
 
             <label for="phone">Telefone:</label>
-            <input type="text" id="phone" name="phone" placeholder="Digite seu telefone aqui">
+            <input type="text" id="phone" name="phone">
 
             <h3>Forma de pagamento</h3>
             <div class="payment-options">
@@ -33,8 +33,8 @@
                 </label>
             </div>
 
-            <label for="troco">Troco</label>
-            <textarea id="troco" name="troco" placeholder="Insira o valor do troco, se necessário"></textarea>
+            <h4 for="troco">Troco</h4>
+            <textarea id="troco" name="troco"></textarea>
 
             <button type="submit" class="btn-finalizar">Finalizar compra</button>
         </form>

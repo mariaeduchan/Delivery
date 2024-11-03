@@ -1,28 +1,55 @@
 .container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header .voltar {
+    font-size: 24px;
+    margin-right: 16px;
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: center; 
+    padding: 16px
+}
+
+header h1 {
+  flex: 1; 
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 80px;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    flex-grow: 1;
+    margin-bottom: 80px;
 }
 
 .voltar {
-    background: none;
-    border: none;
     font-size: 24px;
     cursor: pointer;
+    background: none;
+    border: none;
+    margin-right: 16px;
+    margin-bottom: 80px;
 }
 
 form {
@@ -42,6 +69,16 @@ input, textarea {
     border: 1px solid #ccc;
 }
 
+textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  resize: none;
+  background-color: #C6C2C0;
+}
+
 .payment-options {
     display: flex;
     justify-content: space-around;
@@ -52,7 +89,7 @@ input, textarea {
     margin-top: 20px;
     padding: 10px;
     font-size: 16px;
-    background-color: green;
+    background-color: #327634;
     color: white;
     border: none;
     border-radius: 5px;
@@ -60,7 +97,7 @@ input, textarea {
 }
 
 .btn-finalizar:hover {
-    background-color: darkgreen;
+    background-color: #2a5a2c;
 }
 
 .pedido {
@@ -73,14 +110,11 @@ input, textarea {
     align-items: center;
 }
 
-.delete-btn {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: red;
-    cursor: pointer;
+h3 {
+    margin-top: 80px;
+    font-size: 15px;
 }
 
-.delete-btn:hover {
-    color: darkred;
+label {
+    font-size: 15px;
 }

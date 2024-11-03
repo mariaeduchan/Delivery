@@ -17,13 +17,13 @@
       <img [src]="item.image" alt="{{ item.name }}">
       <div class="item-details">
         <p>{{ item.name }}</p>
-        <p style="color: #888;">{{ item.description }}</p>
+        <p style="color: #000000;">{{ item.description }}</p>
         <p>Quantidade: {{ item.quantity }}</p>
       </div>
       <span (click)="deleteItem(item.id)" class="delete-icon">🗑️</span>
     </div>
 
-    <a class="add-items" (click)="navigateToAddItems()">+ Adicionar itens</a>
+    <button class="add-items" (click)="navigateToAddItems()">+ Adicionar itens</button>
 
     <div class="subtotal">
       <span>Subtotal</span>
@@ -32,7 +32,7 @@
 
     <div class="frete">
       <span>Frete</span>
-      <span>R$ 10.00</span>
+      <span>R$ 5.00</span>
     </div>
 
     <div class="total">
