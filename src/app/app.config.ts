@@ -10,11 +10,11 @@ import { SucessoComponent } from './components/sucesso/sucesso.component';
 import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 
 const routes: Routes = [
-  { path: '', component: DishListComponent },
+  { path: 'gerente', component: DishListComponent },
   { path: 'add-dish', component: DishFormComponent },
   { path: 'edit-dish/:id', component: DishFormComponent },
   { path: 'cozinha', component: CozinhaComponent },
-  { path: 'cardapio', component: CardapioComponent },
+  { path: '', component: CardapioComponent },
   { path: 'info', component: InfoComponent },
   { path: 'sucesso', component: SucessoComponent },
   { path: 'carrinho', component: CarrinhoComponent},
