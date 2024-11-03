@@ -3,18 +3,20 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Dish {
-  id?: number;
+  id: number;
   name: string;
   description: string;
   price: number;
   image: string;
+  quantity: number;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class DishService {
-  private apiUrl = 'http://localhost:3000/dishes'; // Ajuste a URL da API conforme necessário
+  private apiUrl = 'http://localhost:3000/dishes';
+  private cartUrl = 'http://localhost:3000/cart';
 
   constructor(private http: HttpClient) {}
 
@@ -36,5 +38,17 @@ export class DishService {
 
   deleteDish(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  getCartItems(): Observable<Dish[]> {
+    return this.http.get<Dish[]>(this.cartUrl);
+  }
+
+  addToCart(item: Dish): Observable<Dish> {
+    return this.http.post<Dish>(this.cartUrl, item);
+  }
+
+  deleteCartItem(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.cartUrl}/${id}`);
   }
 }

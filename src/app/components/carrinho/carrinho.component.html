@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho</title>
+  <link rel="stylesheet" href="carrinho.component.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <button class="voltar">&#8592;</button>
+      <h1>Carrinho</h1>
+    </header>
+
+    <div *ngFor="let item of cartItems" class="item">
+      <img [src]="item.image" alt="{{ item.name }}">
+      <div class="item-details">
+        <p>{{ item.name }}</p>
+        <p style="color: #888;">{{ item.description }}</p>
+        <p>Quantidade: {{ item.quantity }}</p>
+      </div>
+      <span (click)="deleteItem(item.id)" class="delete-icon">🗑️</span>
+    </div>
+
+    <a class="add-items" (click)="navigateToAddItems()">+ Adicionar itens</a>
+
+    <div class="subtotal">
+      <span>Subtotal</span>
+      <span>R$ {{ subtotal.toFixed(2) }}</span>
+    </div>
+
+    <div class="frete">
+      <span>Frete</span>
+      <span>R$ 10.00</span>
+    </div>
+
+    <div class="total">
+      <span>Total</span>
+      <span>R$ {{ total.toFixed(2) }}</span>
+    </div>
+
+    <button class="botaoseguir">Prosseguir</button>
+  </div>
+</body>
+</html>

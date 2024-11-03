@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio</title>
+  <link rel="stylesheet" href="cardapio.component.css">
+</head>
+<body>
+  <div class="menu-container">
+    <header>
+      <h1>Cardápio</h1>
+      <button class="carrinho" (click)="navigateToCart()">
+        <img src="https://img.icons8.com/?size=100&id=9671&format=png&color=000000" alt="Carrinho de Compras">
+      </button>
+    </header>
+    <div *ngFor="let produto of produtos" class="produto">
+      <h2>{{ produto.name }}</h2>
+      <img [src]="produto.image" alt="{{ produto.name }}" class="produto-imagem" (click)="selectProduct(produto)"/>
+      <p>{{ produto.description }}</p>
+      <p><strong>Preço: R$ {{ produto.price.toFixed(2) }}</strong></p>
+    </div>
+  </div>
+</body>
+</html>

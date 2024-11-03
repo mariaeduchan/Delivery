@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 })
 export class CozinhaComponent implements OnInit {
   dishes: Dish[] = [];
-  selectedStatus: { [key: number]: string } = {}; // Para armazenar o status selecionado por prato
+  selectedStatus: { [key: number]: string } = {};
 
   constructor(private dishService: DishService) {}
 
@@ -20,45 +20,24 @@ export class CozinhaComponent implements OnInit {
     this.loadDishes();
   }
 
-  loadDishes() {
+  loadDishes(): void {
     this.dishService.getDishes().subscribe((data: Dish[]) => {
       this.dishes = data;
-      // Inicializa o status para todos os pratos
-      data.forEach(dish => {
-        if (dish.id !== undefined) {
-          this.selectedStatus[dish.id] = 'STATUS'; // Valor inicial do status
-        }
-      });
     });
   }
 
-  deleteDish(id: number) {
+  deleteDish(id: number): void {
     this.dishService.deleteDish(id).subscribe(() => {
-      this.loadDishes();
+      this.dishes = this.dishes.filter(dish => dish.id !== id);
     });
   }
 
-  selectStatus(event: Event, dishId: number | undefined, status: string): void {
-    event.preventDefault(); // Impede a navegação
-    if (dishId !== undefined) {
-      this.selectedStatus[dishId] = status;
-      console.log(`Dish ID: ${dishId}, Status: ${status}`);
-    }
+  getStatusClass(id: number): string {
+    return this.selectedStatus[id] ? this.selectedStatus[id].toLowerCase() : '';
   }
 
-  getStatusClass(dishId: number | undefined): string {
-    if (dishId !== undefined) {
-      switch (this.selectedStatus[dishId]) {
-        case 'FEITO':
-          return 'FEITO';
-        case 'ENVIADO P/ ENTREGA':
-          return 'ENVIADO';
-        case 'ENTREGUE':
-          return 'ENTREGUE';
-        default:
-          return '';
-      }
-    }
-    return '';
+  selectStatus(event: Event, id: number, status: string): void {
+    event.preventDefault();
+    this.selectedStatus[id] = status;
   }
 }
