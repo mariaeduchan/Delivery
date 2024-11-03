@@ -9,25 +9,29 @@
 
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  padding: 16px
 }
 
 h1 {
+  font-size: 24px;
+  font-weight: bold;
   text-align: center;
-  font-size: 36px;
+  margin: 10;
   flex-grow: 1;
-  margin: 0;
-  font-family: Arial, sans-serif;
+  margin-bottom: 40px;
 }
 
 .carrinho {
+  font-size: 24px;
+  cursor: pointer;
   background: none;
   border: none;
-  cursor: pointer;
-  transform: translateY(-50%) scale(0.4);
-  margin-top: 100px;
+  margin-right: 16px;
+  transform: translateY(-0%)scale(0.4);
+  margin-bottom: 5px;
+
 }
 
 .produto {

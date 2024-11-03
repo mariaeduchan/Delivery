@@ -1,28 +1,51 @@
-.container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+body {
     font-family: Arial, sans-serif;
+  }
+  
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: center; 
+    padding: 16px
 }
 
-h1 {
+header h1 {
     font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    flex-grow: 1;
 }
+    
 
 .voltar {
-    background: none;
-    border: none;
     font-size: 24px;
     cursor: pointer;
+    background: none;
+    border: none;
+    margin-right: 16px;
+  
+}
+
+header .voltar{
+  font-size: 24px;
+  margin-right: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .item {
@@ -55,8 +78,22 @@ h1 {
 .subtotal, .frete, .total {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 1px;
+    font-size: 15px;
+}
+
+.total {
     font-size: 18px;
+    margin-top: 10px;
+}
+
+.frete{
+    margin-top: 60px;
+    margin-top: 10px;
+}
+
+.subtotal{
+    margin-top: 180px;
 }
 
 .botaoseguir {
@@ -65,7 +102,7 @@ h1 {
     padding: 10px;
     margin-top: 20px;
     font-size: 18px;
-    background-color: green;
+    background-color: #327634;
     color: white;
     border: none;
     border-radius: 5px;
@@ -73,5 +110,26 @@ h1 {
 }
 
 .botaoseguir:hover {
-    background-color: darkgreen;
+    background-color: #2a5a2c;
 }
+
+.add-items{
+    background-color: #F3ECFF;
+    border: none;
+    cursor: pointer;
+    padding: 10px; 
+    border-radius: 10px;
+    font-size: 18px;
+    position: absolute;
+    left: auto; 
+    margin-top: 40px;
+    position: relative; 
+    margin-top: 20px; 
+    float: left; 
+}
+
+.add-items:hover { 
+    background-color: #D1CCDB;
+
+}
+
