@@ -8,7 +8,7 @@ body {
 
 .cardapio {
   width: 100%;
-  max-width: 1200px; /* Limita a largura máxima */
+  max-width: 1200px; 
   margin: 0 auto;
   font-family: Arial, sans-serif;
   text-align: center;
@@ -23,7 +23,7 @@ h1 {
 .item {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Espaço entre o texto e a imagem */
+  justify-content: space-between; 
   margin-bottom: 20px;
   padding: 15px;
   border-bottom: 1px solid #ddd;
@@ -70,7 +70,7 @@ h1 {
 }
 
 .lapis {
-  width: 23px; /* Ajusta o tamanho do ícone de lápis */
+  width: 23px; 
   height: auto;
   cursor: pointer;
   padding-top: 70px;
