@@ -1,56 +1,76 @@
 /* cardapio.component.css */
 
 .menu-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 36px;
-  }
-  
-  .carrinho {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .produto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .produto h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .produto img {
-    width: 150px; /* Ajuste o tamanho da imagem conforme necessário */
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    cursor: pointer; /* Adicione um cursor pointer para indicar que a imagem é clicável */
-  }
-  
-  .produto p {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  flex-grow: 1;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.carrinho {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%) scale(0.4);
+  margin-top: 100px;
+}
+
+.produto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.produto .texto {
+  flex: 1;
+  font-family: Arial, sans-serif;
+}
+
+.produto .imagem {
+  margin-left: 20px;
+}
+
+.produto-imagem {
+  cursor: pointer;
+  width: 150px; 
+  height: 100px; 
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.produto-description {
+  color: #706E6E;
+  font-size: 15px;
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  white-space: normal;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  white-space: normal; 
+  font-family: Arial, sans-serif;
+}
