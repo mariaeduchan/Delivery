@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators'; // Importar switchMap corretamente
+import { switchMap } from 'rxjs/operators'; // Importando o switchMap
 
 export interface Dish {
   id: number;
@@ -56,15 +56,15 @@ export class DishService {
     return this.http.delete<void>(`${this.cartUrl}/${id}`);
   }
 
-  placeOrder(order: Dish[]): Observable<any> { // Método para enviar pedidos
-    return this.http.post(this.ordersUrl, order);
+  placeOrder(order: Dish[]): Observable<any> {
+    return this.http.post<Dish[]>(this.ordersUrl, order);
   }
 
-  getOrders(): Observable<Dish[]> { // Método para obter pedidos
+  getOrders(): Observable<Dish[]> {
     return this.http.get<Dish[]>(this.ordersUrl);
   }
 
-  moveCartToOrders(): Observable<any> { // Método para mover itens do carrinho para pedidos
+  moveCartToOrders(): Observable<any> {
     return this.getCartItems().pipe(
       switchMap((cartItems: Dish[]) => this.placeOrder(cartItems).pipe(
         switchMap(() => this.clearCart())

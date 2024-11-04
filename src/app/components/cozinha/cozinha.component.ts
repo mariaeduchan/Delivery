@@ -21,7 +21,7 @@ export class CozinhaComponent implements OnInit {
   }
 
   loadOrders(): void {
-    this.dishService.getOrders().subscribe((data: Dish[]) => {
+    this.dishService.getCartItems().subscribe((data: Dish[]) => {
       this.orders = data;
     });
   }
