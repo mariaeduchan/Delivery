@@ -18,7 +18,7 @@
       <div class="texto">
         <h2>{{ produto.name }}</h2>
         <p class="produto-description">{{ produto.description }}</p>
-        <p><strong>Preço: R$ {{ produto.price.toFixed(2) }}</strong></p>
+        <p><strong>{{ produto.price.toFixed(2) }}</strong></p>
       </div>
       <div class="imagem">
         <img [src]="produto.image" alt="{{ produto.name }}" class="produto-imagem" (click)="selectProduct(produto)"/>

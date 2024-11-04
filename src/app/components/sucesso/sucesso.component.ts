@@ -15,6 +15,6 @@ export class SucessoComponent {
   constructor(private router: Router) {}
 
   redirectToMenu() {
-    this.router.navigate(['/cardapio']);
+    this.router.navigate(['']);
   }
 }

@@ -8,6 +8,7 @@ import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { InfoComponent } from './components/info/info.component';
 import { SucessoComponent } from './components/sucesso/sucesso.component';
 import { CarrinhoComponent } from './components/carrinho/carrinho.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'gerente', component: DishListComponent },

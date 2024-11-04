@@ -12,19 +12,18 @@
       <button class="voltar" (click)="navigateBack()">&#8592;</button>
       <h1>Adicionais</h1>
     </header>
-    <img class= "lanche" src="https://preview.colorkit.co/color/c6c4c0.png?size=social&type=opengraph" alt="">
     <div *ngIf="produto" class="produto-info">
-      <h2 class="produto-nome">{{ produto?.name }}</h2>
-      <img [src]="produto?.image" alt="{{ produto?.name }}" class="produto-img">
+      <h2 class="produto-nome">{{ produto.name }}</h2>
+      <img [src]="produto.image" alt="{{ produto.name }}" class="produto-img">
     </div>
   </div>
-    <label for="observacao" class="observacao-label">Observação</label>
-    <textarea id="observacao" class="observacao-textarea" rows="3"></textarea>
-    <div class="quantidade-container">
-      <button class="quantidade-btn" (click)="updateQuantity(-1)">-</button>
-      <span class="quantidade">{{ quantidade }}</span>
-      <button class="quantidade-btn" (click)="updateQuantity(1)">+</button>
-    </div>
+  <label for="observacao" class="observacao-label">Observação</label>
+  <textarea id="observacao" [(ngModel)]="observacao" class="observacao-textarea" rows="3"></textarea>
+  <div class="quantidade-container">
+    <button class="quantidade-btn" (click)="updateQuantity(-1)">-</button>
+    <span class="quantidade">{{ quantidade }}</span>
+    <button class="quantidade-btn" (click)="updateQuantity(1)">+</button>
     <button class="adicionar-btn" (click)="addToCart()">Adicionar</button>
+  </div>
 </body>
 </html>

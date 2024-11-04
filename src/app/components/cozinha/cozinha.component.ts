@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DishService, Dish } from '../../services/dish.service';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cozinha',
@@ -14,7 +14,7 @@ export class CozinhaComponent implements OnInit {
   dishes: Dish[] = [];
   selectedStatus: { [key: number]: string } = {};
 
-  constructor(private dishService: DishService) {}
+  constructor(private dishService: DishService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadDishes();
@@ -32,12 +32,13 @@ export class CozinhaComponent implements OnInit {
     });
   }
 
-  getStatusClass(id: number): string {
-    return this.selectedStatus[id] ? this.selectedStatus[id].toLowerCase() : '';
+  getStatusClass(dishId: number): string {
+    const status = this.selectedStatus[dishId] || 'STATUS';
+    return status.toLowerCase();
   }
 
-  selectStatus(event: Event, id: number, status: string): void {
+  selectStatus(event: Event, dishId: number, status: string): void {
     event.preventDefault();
-    this.selectedStatus[id] = status;
+    this.selectedStatus[dishId] = status;
   }
 }

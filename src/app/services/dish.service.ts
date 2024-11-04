@@ -8,7 +8,9 @@ export interface Dish {
   description: string;
   price: number;
   image: string;
-  quantity: number;
+  quantity?: number;
+  observacao?: string;
+  status?: string;
 }
 
 @Injectable({
@@ -40,12 +42,12 @@ export class DishService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
-  getCartItems(): Observable<Dish[]> {
-    return this.http.get<Dish[]>(this.cartUrl);
-  }
-
   addToCart(item: Dish): Observable<Dish> {
     return this.http.post<Dish>(this.cartUrl, item);
+  }
+
+  getCartItems(): Observable<Dish[]> {
+    return this.http.get<Dish[]>(this.cartUrl);
   }
 
   deleteCartItem(id: number): Observable<void> {

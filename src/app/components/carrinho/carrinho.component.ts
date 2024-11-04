@@ -36,11 +36,15 @@ export class CarrinhoComponent implements OnInit {
   }
 
   calculateTotals(): void {
-    this.subtotal = this.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    this.total = this.subtotal + 10; // Valor de frete fixo
+    this.subtotal = this.cartItems.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
+    this.total = this.subtotal + 5; 
   }
 
   navigateToAddItems(): void {
-    this.router.navigate(['/cardapio']); // Ajuste para navegar para a página de adicionar itens
+    this.router.navigate(['']); 
+  }
+
+  navigateToInfo(): void {
+    this.router.navigate(['/info']); 
   }
 }
