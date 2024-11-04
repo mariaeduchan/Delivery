@@ -7,14 +7,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
-  overflow: hidden; /* Remove as barras de rolagem */
+  overflow: hidden; 
 }
 
 .container {
   text-align: center;
   padding: 49px;
-  flex-grow: 1; /* Faz a container crescer para preencher o espaço restante */
-  overflow-y: auto; /* Permite a rolagem vertical */
+  flex-grow: 1; 
 }
 
 .header {
@@ -84,7 +83,6 @@ body {
   width: 238px;
   height: 30px;
   margin: 0 auto; /* Centraliza o botão */
-  display: flex;
   align-items: center;
   justify-content: space-between; /* Adiciona espaço entre o texto e a seta */
   padding: 0 10px; /* Adiciona espaço interno nas laterais */

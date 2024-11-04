@@ -1,24 +1,35 @@
-<div class="container">
-  <div class="header">
-    <h1>Pedidos</h1>
-  </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cozinha</title>
+  <link rel="stylesheet" href="cozinha.component.css">
+</head>
+<body>
   <div class="container">
-    <div *ngFor="let dish of dishes" class="pedido">
-      <h2 class="pedido-id">ID - {{ dish.id }}</h2>
-      <div class="pedido-item">
-        <p class="item-nome">{{ dish.name }} <span class="item-quantidade">1x</span></p>
-        <p class="item-descricao">{{ dish.description }}</p>
-      </div>
-      <div class="status-dropdown">
-        <button *ngIf="dish.id !== undefined" class="status-button" [ngClass]="getStatusClass(dish.id)" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{ selectedStatus[dish.id] || 'STATUS' }} <span class="dropdown-icon">▼</span>
-        </button>
-        <div *ngIf="dish.id !== undefined" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item feito" href="#" (click)="selectStatus($event, dish.id, 'FEITO')">FEITO</a>
-          <a class="dropdown-item enviado" href="#" (click)="selectStatus($event, dish.id, 'ENVIADO P/ ENTREGA')">ENVIADO P/ ENTREGA</a>
-          <a class="dropdown-item entregue" href="#" (click)="selectStatus($event, dish.id, 'ENTREGUE')">ENTREGUE</a>
+    <div class="header">
+      <h1>Pedidos</h1>
+    </div>
+    <div class="pedido-container">
+      <div *ngFor="let order of orders" class="pedido">
+        <h2 class="pedido-id">ID - {{ order.id }}</h2>
+        <div class="pedido-item">
+          <p class="item-nome">{{ order.name }} <span class="item-quantidade">{{ order.quantity }}x</span></p>
+          <p class="item-descricao">{{ order.description }}</p>
+        </div>
+        <div class="status-dropdown">
+          <button *ngIf="order.id !== undefined" class="status-button" [ngClass]="getStatusClass(order.id)" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ selectedStatus[order.id] || 'STATUS' }} <span class="dropdown-icon">▼</span>
+          </button>
+          <div *ngIf="order.id !== undefined" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item feito" href="#" (click)="selectStatus($event, order.id, 'FEITO')">FEITO</a>
+            <a class="dropdown-item enviado" href="#" (click)="selectStatus($event, order.id, 'ENVIADO P/ ENTREGA')">ENVIADO P/ ENTREGA</a>
+            <a class="dropdown-item entregue" href="#" (click)="selectStatus($event, order.id, 'ENTREGUE')">ENTREGUE</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</body>
+</html>

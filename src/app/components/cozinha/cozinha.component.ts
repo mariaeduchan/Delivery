@@ -11,34 +11,28 @@ import { RouterModule, Router } from '@angular/router';
   imports: [CommonModule, RouterModule]
 })
 export class CozinhaComponent implements OnInit {
-  dishes: Dish[] = [];
+  orders: Dish[] = [];
   selectedStatus: { [key: number]: string } = {};
 
   constructor(private dishService: DishService, private router: Router) {}
 
   ngOnInit(): void {
-    this.loadDishes();
+    this.loadOrders();
   }
 
-  loadDishes(): void {
-    this.dishService.getDishes().subscribe((data: Dish[]) => {
-      this.dishes = data;
+  loadOrders(): void {
+    this.dishService.getOrders().subscribe((data: Dish[]) => {
+      this.orders = data;
     });
   }
 
-  deleteDish(id: number): void {
-    this.dishService.deleteDish(id).subscribe(() => {
-      this.dishes = this.dishes.filter(dish => dish.id !== id);
-    });
-  }
-
-  getStatusClass(dishId: number): string {
-    const status = this.selectedStatus[dishId] || 'STATUS';
+  getStatusClass(orderId: number): string {
+    const status = this.selectedStatus[orderId] || 'STATUS';
     return status.toLowerCase();
   }
 
-  selectStatus(event: Event, dishId: number, status: string): void {
+  selectStatus(event: Event, orderId: number, status: string): void {
     event.preventDefault();
-    this.selectedStatus[dishId] = status;
+    this.selectedStatus[orderId] = status;
   }
 }

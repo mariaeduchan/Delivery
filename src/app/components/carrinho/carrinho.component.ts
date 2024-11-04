@@ -47,4 +47,18 @@ export class CarrinhoComponent implements OnInit {
   navigateToInfo(): void {
     this.router.navigate(['/info']); 
   }
+
+  prosseguirParaCozinha(): void {
+    this.dishService.moveCartToOrders().subscribe({
+      next: () => {
+        console.log("Itens do carrinho movidos para pedidos e enviados para a cozinha");
+        this.cartItems = [];
+        this.calculateTotals();
+        this.router.navigate(['/cozinha']); // Redireciona para a tela da cozinha
+      },
+      error: (error) => {
+        console.error("Erro ao mover itens do carrinho para pedidos", error);
+      }
+    });
+  }
 }
