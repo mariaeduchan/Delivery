@@ -16,7 +16,7 @@
     <div *ngFor="let item of cartItems" class="item">
       <img [src]="item.image" alt="{{ item.name }}">
       <div class="item-details">
-        <p>{{ item.name }}</p>
+        <h2>{{ item.name }}</h2>
         <p style="color: #000000;">{{ item.description }}</p>
         <p>Quantidade: {{ item.quantity }}</p>
       </div>

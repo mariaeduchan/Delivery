@@ -33,6 +33,35 @@
       "observacao": ""
     },
     {
+      "id": "1212",
+      "name": "Cheddar Burguer",
+      "description": "Pão, 1 carne, 3 fatias de queijo cheddar, tomate, alface e cebola",
+      "price": 27,
+      "image": "/assets/images/cheddarburguer.png",
+      "quantity": 1,
+      "observacao": ""
+    },
+    {
+      "id": "1212",
+      "name": "Cheddar Burguer",
+      "description": "Pão, 1 carne, 3 fatias de queijo cheddar, tomate, alface e cebola",
+      "price": 27,
+      "image": "/assets/images/cheddarburguer.png",
+      "quantity": 3,
+      "observacao": ""
+    },
+    {
+      "id": "1212",
+      "name": "Cheddar Burguer",
+      "description": "Pão, 1 carne, 3 fatias de queijo cheddar, tomate, alface e cebola",
+      "price": 27,
+      "image": "/assets/images/cheddarburguer.png",
+      "quantity": 1,
+      "observacao": ""
+    }
+  ],
+  "orders": [
+    {
       "id": "1231",
       "name": "Suco 600ml",
       "description": "Laranja - Limão - Maracujá",
@@ -41,6 +70,5 @@
       "quantity": 2,
       "observacao": ""
     }
-  ],
-  "orders": []
+  ]
 }

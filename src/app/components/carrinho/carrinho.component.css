@@ -1,8 +1,7 @@
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
   }
   
-
 .container {
   width: 100%;
   max-width: 400px;
@@ -68,11 +67,6 @@ header .voltar{
 .delete-icon {
     cursor: pointer;
     font-size: 24px;
-    color: red;
-}
-
-.delete-icon:hover {
-    color: darkred;
 }
 
 .subtotal, .frete, .total {
@@ -100,7 +94,7 @@ header .voltar{
     display: block;
     width: 100%;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 50px;
     font-size: 18px;
     background-color: #327634;
     color: white;
@@ -124,8 +118,8 @@ header .voltar{
     left: auto; 
     margin-top: 40px;
     position: relative; 
-    margin-top: 20px; 
     float: left; 
+    margin-bottom: 50px;
 }
 
 .add-items:hover { 
@@ -133,3 +127,10 @@ header .voltar{
 
 }
 
+h2 {
+    font-size: 15px;
+}
+
+p{
+    font-size: 10px;
+}
