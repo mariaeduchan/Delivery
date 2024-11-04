@@ -2,9 +2,9 @@
   "dishes": [
     {
       "id": "1212",
-      "name": "Cheddar Burguer",
+      "name": "pao",
       "description": "Pão, 1 carne, 3 fatias de queijo cheddar, tomate, alface e cebola",
-      "price": 27,
+      "price": 23,
       "image": "/assets/images/cheddarburguer.png"
     },
     {
