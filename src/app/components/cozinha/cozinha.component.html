@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="cozinha.component.css">
 </head>
 <body>
-  <div class="container">
-    <div class="header">
+  <div class="header">
       <h1>Pedidos</h1>
-    </div>
+  </div>
+  <div class="container">
     <div class="pedido-container">
       <div *ngFor="let order of orders" class="pedido">
         <h2 class="pedido-id">ID - {{ order.id }}</h2>
@@ -19,7 +19,7 @@
           <p class="item-descricao">{{ order.description }}</p>
         </div>
         <div class="status-dropdown">
-          <button *ngIf="order.id !== undefined" class="status-button" [ngClass]="getStatusClass(order.id)" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button *ngIf="order.id !== undefined" class="status-button" [ngClass]="getStatusButtonClass(order.id)" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ selectedStatus[order.id] || 'STATUS' }} <span class="dropdown-icon">▼</span>
           </button>
           <div *ngIf="order.id !== undefined" class="dropdown-menu" aria-labelledby="dropdownMenuButton">

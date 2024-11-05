@@ -35,4 +35,18 @@ export class CozinhaComponent implements OnInit {
     event.preventDefault();
     this.selectedStatus[orderId] = status;
   }
+
+  getStatusButtonClass(orderId: number): string {
+    const status = this.selectedStatus[orderId];
+    switch (status) {
+      case 'FEITO':
+        return 'feito';
+      case 'ENVIADO P/ ENTREGA':
+        return 'enviado';
+      case 'ENTREGUE':
+        return 'entregue';
+      default:
+        return '';
+    }
+  }
 }

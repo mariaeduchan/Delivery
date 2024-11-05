@@ -56,15 +56,17 @@ body {
 
 .item-nome {
   font-weight: regular;
-  text-align: center; /* Centraliza o texto */
+  text-align: left; /* Centraliza o texto */
   font-size: 18px;
+  padding-left: 8px;
 }
 
 .item-descricao {
   font-size: 10px;
   font-style: italic;
   color: #706E6e;
-  text-align: center; /* Centraliza o texto */
+  text-align: left;
+  padding-left: 8px; /* Centraliza o texto */
 }
 
 .status-dropdown {
@@ -88,6 +90,18 @@ body {
   padding: 0 10px; /* Adiciona espaço interno nas laterais */
   white-space: nowrap; /* Garante que o texto não quebre a linha */
   overflow: hidden; /* Esconde qualquer texto que ultrapasse os limites do botão */
+}
+
+.status-button.feito {
+  background-color: red;
+}
+
+.status-button.enviado {
+  background-color: orange;
+}
+
+.status-button.entregue {
+  background-color: green;
 }
 
 .dropdown-menu {

@@ -23,7 +23,24 @@
     }
   ],
   "cart": [
-   
+    {
+      "id": "1452",
+      "name": "Chicken Burguer",
+      "description": "Pão, 1 filé de frango, 1 fatia de queijo, tomate, alface e cebola",
+      "price": 27,
+      "image": "/assets/images/ChickenBurguer.webp",
+      "quantity": 1,
+      "observacao": ""
+    },
+    {
+      "id": "1231",
+      "name": "Suco 600ml",
+      "description": "Laranja - Limão - Maracujá",
+      "price": 8,
+      "image": "/assets/images/suco.jpg",
+      "quantity": 1,
+      "observacao": ""
+    }
   ],
   "orders": []
 }
