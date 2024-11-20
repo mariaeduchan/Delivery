@@ -3,6 +3,7 @@ import { DishService, Dish } from '../../services/dish.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-adicionais',
@@ -25,7 +26,7 @@ export class AdicionaisComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.dishService.getDish(+id).subscribe((data: Dish) => {
+      this.dishService.getDish(id).subscribe((data: Dish) => {
         this.produto = data;
       });
     }
@@ -39,7 +40,12 @@ export class AdicionaisComponent implements OnInit {
 
   addToCart(): void {
     if (this.produto) {
-      const cartItem = { ...this.produto, quantity: this.quantidade, observacao: this.observacao };
+      const cartItem = { 
+        ...this.produto, 
+        quantity: this.quantidade, 
+        observacao: this.observacao, // Inclui a observação
+        cartItemId: uuidv4() 
+      };
       this.dishService.addToCart(cartItem).subscribe({
         next: () => {
           this.router.navigate(['/carrinho']);

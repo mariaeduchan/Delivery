@@ -9,18 +9,18 @@
 <body>
   <div class="container">
     <header>
-      <button class="voltar">&#8592;</button>
+      <button class="voltar" (click)="navigateBack()">&#8592;</button>
       <h1>Carrinho</h1>
     </header>
 
     <div *ngFor="let item of cartItems" class="item">
-      <img [src]="item.image" alt="{{ item.name }}">
+      <img [src]="item.image" alt="{{ item.name }}" class="item-image">
       <div class="item-details">
-        <p>{{ item.name }}</p>
-        <p style="color: #000000;">{{ item.description }}</p>
+        <p><strong>{{ item.name }}</strong></p>
+        <p *ngIf="item.observacao">Observação: {{ item.observacao }}</p>
         <p>Quantidade: {{ item.quantity }}</p>
       </div>
-      <span (click)="deleteItem(item.id)" class="delete-icon">🗑️</span>
+      <span *ngIf="item.cartItemId" (click)="deleteItem(item.cartItemId)" class="delete-icon">🗑️</span>
     </div>
 
     <button class="add-items" (click)="navigateToAddItems()">+ Adicionar itens</button>

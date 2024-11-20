@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators'; // Importando o switchMap
+import { switchMap } from 'rxjs/operators';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface Dish {
-  id: number;
+  id: string;
   name: string;
   description: string;
   price: number;
@@ -12,6 +13,8 @@ export interface Dish {
   quantity?: number;
   observacao?: string;
   status?: string;
+  cartItemId?: string;
+  orderId?: string; 
 }
 
 @Injectable({
@@ -20,7 +23,8 @@ export interface Dish {
 export class DishService {
   private apiUrl = 'http://localhost:3000/dishes';
   private cartUrl = 'http://localhost:3000/cart';
-  private ordersUrl = 'http://localhost:3000/orders'; // URL para pedidos
+  private ordersUrl = 'http://localhost:3000/orders';
+  private kitchenUrl = 'http://localhost:3000/kitchen';
 
   constructor(private http: HttpClient) {}
 
@@ -28,7 +32,7 @@ export class DishService {
     return this.http.get<Dish[]>(this.apiUrl);
   }
 
-  getDish(id: number): Observable<Dish> {
+  getDish(id: string): Observable<Dish> {
     return this.http.get<Dish>(`${this.apiUrl}/${id}`);
   }
 
@@ -36,15 +40,16 @@ export class DishService {
     return this.http.post<Dish>(this.apiUrl, dish);
   }
 
-  updateDish(id: number, dish: Dish): Observable<Dish> {
+  updateDish(id: string, dish: Dish): Observable<Dish> {
     return this.http.put<Dish>(`${this.apiUrl}/${id}`, dish);
   }
 
-  deleteDish(id: number): Observable<void> {
+  deleteDish(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
   addToCart(item: Dish): Observable<Dish> {
+    item.cartItemId = uuidv4(); 
     return this.http.post<Dish>(this.cartUrl, item);
   }
 
@@ -52,7 +57,7 @@ export class DishService {
     return this.http.get<Dish[]>(this.cartUrl);
   }
 
-  deleteCartItem(id: number): Observable<void> {
+  deleteCartItem(id: string): Observable<void> {
     return this.http.delete<void>(`${this.cartUrl}/${id}`);
   }
 
@@ -64,15 +69,19 @@ export class DishService {
     return this.http.get<Dish[]>(this.ordersUrl);
   }
 
-  moveCartToOrders(): Observable<any> {
-    return this.getCartItems().pipe(
-      switchMap((cartItems: Dish[]) => this.placeOrder(cartItems).pipe(
-        switchMap(() => this.clearCart())
-      ))
-    );
-  }
-
   clearCart(): Observable<void> {
     return this.http.delete<void>(this.cartUrl);
+  }
+
+  moveCartToKitchen(): Observable<any> {
+    return this.getCartItems().pipe(
+      switchMap((cartItems: Dish[]) => {
+        const orderId = uuidv4(); 
+        const orderWithOrderId = cartItems.map(item => ({ ...item, orderId }));
+        return this.http.post(this.kitchenUrl, orderWithOrderId).pipe(
+          switchMap(() => this.clearCart())
+        );
+      })
+    );
   }
 }

@@ -12,7 +12,7 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class CozinhaComponent implements OnInit {
   orders: Dish[] = [];
-  selectedStatus: { [key: number]: string } = {};
+  selectedStatus: { [key: string]: string } = {}; // Alterado para string
 
   constructor(private dishService: DishService, private router: Router) {}
 
@@ -21,22 +21,28 @@ export class CozinhaComponent implements OnInit {
   }
 
   loadOrders(): void {
-    this.dishService.getCartItems().subscribe((data: Dish[]) => {
+    this.dishService.getOrders().subscribe((data: Dish[]) => { // Corrigido para buscar pedidos
       this.orders = data;
     });
   }
 
-  getStatusClass(orderId: number): string {
+  getStatusClass(orderId: string): string {
     const status = this.selectedStatus[orderId] || 'STATUS';
     return status.toLowerCase();
   }
 
-  selectStatus(event: Event, orderId: number, status: string): void {
+  selectStatus(event: Event, orderId: string, status: string): void {
     event.preventDefault();
     this.selectedStatus[orderId] = status;
+
+    if (status === 'ENTREGUE') {
+      setTimeout(() => {
+        this.orders = this.orders.filter(order => order.id !== orderId);
+      }, 2000); 
+    }
   }
 
-  getStatusButtonClass(orderId: number): string {
+  getStatusButtonClass(orderId: string): string {
     const status = this.selectedStatus[orderId];
     switch (status) {
       case 'FEITO':

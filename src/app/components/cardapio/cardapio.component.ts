@@ -27,7 +27,7 @@ export class CardapioComponent implements OnInit {
   }
 
   selectProduct(produto: Dish): void {
-    this.router.navigate(['/adicionais', produto.id]);
+    this.router.navigate(['/adicionais', produto.id]); // Certifique-se de que produto.id é string
   }
 
   navigateToCart(): void {

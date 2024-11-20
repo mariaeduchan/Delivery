@@ -16,7 +16,7 @@
         <h2 class="pedido-id">ID - {{ order.id }}</h2>
         <div class="pedido-item">
           <p class="item-nome">{{ order.name }} <span class="item-quantidade">{{ order.quantity }}x</span></p>
-          <p class="item-descricao">{{ order.description }}</p>
+          <p *ngIf="order.observacao" class="item-observacao">{{ order.observacao }}</p>
         </div>
         <div class="status-dropdown">
           <button *ngIf="order.id !== undefined" class="status-button" [ngClass]="getStatusButtonClass(order.id)" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

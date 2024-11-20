@@ -28,33 +28,37 @@ export class CarrinhoComponent implements OnInit {
     });
   }
 
-  deleteItem(id: number): void {
-    this.dishService.deleteCartItem(id).subscribe(() => {
-      this.cartItems = this.cartItems.filter(item => item.id !== id);
+  deleteItem(cartItemId: string): void {
+    this.dishService.deleteCartItem(cartItemId).subscribe(() => {
+      this.cartItems = this.cartItems.filter(item => item.cartItemId !== cartItemId);
       this.calculateTotals();
     });
   }
 
   calculateTotals(): void {
     this.subtotal = this.cartItems.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
-    this.total = this.subtotal + 5; 
+    this.total = this.subtotal + 5;
   }
 
   navigateToAddItems(): void {
-    this.router.navigate(['']); 
+    this.router.navigate(['']);
   }
 
   navigateToInfo(): void {
-    this.router.navigate(['/info']); 
+    this.router.navigate(['/info']);
+  }
+
+  navigateBack(): void {
+    this.router.navigate(['']);
   }
 
   prosseguirParaCozinha(): void {
-    this.dishService.moveCartToOrders().subscribe({
+    this.dishService.moveCartToKitchen().subscribe({
       next: () => {
         console.log("Itens do carrinho movidos para pedidos e enviados para a cozinha");
         this.cartItems = [];
         this.calculateTotals();
-        this.router.navigate(['/cozinha']); // Redireciona para a tela da cozinha
+        this.router.navigate(['/cozinha']);
       },
       error: (error) => {
         console.error("Erro ao mover itens do carrinho para pedidos", error);
