@@ -50,9 +50,10 @@ export class DishService {
 
   addToCart(item: Dish): Observable<Dish> {
     item.cartItemId = uuidv4(); 
+    item.id = item.cartItemId; 
     return this.http.post<Dish>(this.cartUrl, item);
   }
-
+  
   getCartItems(): Observable<Dish[]> {
     return this.http.get<Dish[]>(this.cartUrl);
   }

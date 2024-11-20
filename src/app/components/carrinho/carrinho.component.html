@@ -20,7 +20,7 @@
         <p *ngIf="item.observacao">Observação: {{ item.observacao }}</p>
         <p>Quantidade: {{ item.quantity }}</p>
       </div>
-      <span *ngIf="item.cartItemId" (click)="deleteItem(item.cartItemId)" class="delete-icon">🗑️</span>
+      <span *ngIf="item.cartItemId" (click)="deleteItem(item.id)" class="delete-icon">🗑️</span>
     </div>
 
     <button class="add-items" (click)="navigateToAddItems()">+ Adicionar itens</button>

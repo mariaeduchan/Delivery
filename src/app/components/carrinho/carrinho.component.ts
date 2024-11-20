@@ -28,9 +28,9 @@ export class CarrinhoComponent implements OnInit {
     });
   }
 
-  deleteItem(cartItemId: string): void {
-    this.dishService.deleteCartItem(cartItemId).subscribe(() => {
-      this.cartItems = this.cartItems.filter(item => item.cartItemId !== cartItemId);
+  deleteItem(id: string): void {
+    this.dishService.deleteCartItem(id).subscribe(() => {
+      this.cartItems = this.cartItems.filter(item => item.id !== id);
       this.calculateTotals();
     });
   }
