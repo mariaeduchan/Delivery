@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionais</title>
+  <link rel="stylesheet" href="adicionais.component.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <button class="voltar" (click)="navigateBack()">&#8592;</button>
+      <h1>Adicionais</h1>
+    </header>
+    <div *ngIf="produto" class="produto-info">
+      <h2 class="produto-nome">{{ produto.name }}</h2>
+      <img [src]="produto.image" alt="{{ produto.name }}" class="produto-img">
+    </div>
+  </div>
+  <label for="observacao" class="observacao-label">Observação</label>
+  <textarea id="observacao" [(ngModel)]="observacao" class="observacao-textarea" rows="3"></textarea>
+  <div class="quantidade-container">
+    <button class="quantidade-btn" (click)="updateQuantity(-1)">-</button>
+    <span class="quantidade">{{ quantidade }}</span>
+    <button class="quantidade-btn" (click)="updateQuantity(1)">+</button>
+    <button class="adicionar-btn" (click)="addToCart()">Adicionar</button>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</body>
+</html>

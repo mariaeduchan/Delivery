@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #d8d8d8;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex-grow: 1;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #000;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.pedido-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.pedido {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.pedido-id {
+  background-color: #fff;
+  color: #000;
+  padding: 15px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.pedido-content {
+  padding: 20px;
+}
+
+.item-nome {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+
+.item-quantidade {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.item-descricao {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+.pedido-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.status-dropdown {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.status-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-button.feito { background-color: #F25C08; }
+.status-button.enviado { background-color: #FBCC28; color: #000; }
+.status-button.entregue { background-color: #3BBB1A; }
+
+.dropdown-menu {
+  display: none;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.status-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 12px;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+  color: #333;
+}
+
+.dropdown-item.feito { background-color: #F25C08; color: #fff; }
+.dropdown-item.enviado { background-color: #FBCC28; color: #000; }
+.dropdown-item.entregue { background-color: #3BBB1A; color: #fff; }
+
+.dropdown-item:hover {
+  opacity: 0.8;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .pedido-id {
+    font-size: 18px;
+  }
+
+  .item-nome {
+    font-size: 16px;
+  }
+
+  .item-descricao {
+    font-size: 14px;
+  }
+
+  .status-button,
+  .delete-button {
+    font-size: 14px;
+  }
+}

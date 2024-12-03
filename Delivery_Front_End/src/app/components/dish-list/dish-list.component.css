@@ -1,0 +1,128 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.cardapio-container {
+  max-width: 600px;
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin: 0;
+}
+
+.dish-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dish-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dish-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.dish-info {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.dish-info h2 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #333;
+}
+
+.dish-info p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 0.5rem 0;
+}
+
+.dish-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.dish-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.edit-btn, .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn {
+  color: #000000; 
+  background-color: transparent;
+}
+
+.edit-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1); 
+}
+
+.delete-btn {
+  color: #e74c3c;
+  background-color: transparent;
+}
+
+.delete-btn:hover {
+  background-color: rgba(231, 76, 60, 0.1); 
+}
+
+.add-dish-btn {
+  width: 100%;
+  background-color: #F4690C;
+  color: white;
+  border: none;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-dish-btn:hover {
+  background-color: #d45a09;
+}

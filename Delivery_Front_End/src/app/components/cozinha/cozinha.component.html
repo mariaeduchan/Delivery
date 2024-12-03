@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cozinha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="cozinha.component.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Cozinha</h1>
+  </header>
+  <main class="container">
+    <div class="pedido-container">
+      <div *ngFor="let order of orders" class="pedido">
+        <h2 class="pedido-id">Pedido #{{ order.id }}</h2>
+        <div class="pedido-content">
+          <div *ngFor="let item of order.items" class="item">
+            <p class="item-nome">
+              {{ item.name }}
+              <span class="item-quantidade">{{ item.quantity }}x</span>
+            </p>
+            <p class="item-descricao">{{ item.description }}</p>
+            <p *ngIf="item.observacao" class="item-observacao">Observação: {{ item.observacao }}</p>
+          </div>
+          <div class="pedido-actions">
+            <div class="status-dropdown">
+              <button class="status-button" 
+                      [ngClass]="getStatusButtonClass(order.id)" 
+                      type="button" 
+                      id="dropdownMenuButton" 
+                      data-bs-toggle="dropdown" 
+                      aria-haspopup="true" 
+                      aria-expanded="false">
+                {{ selectedStatus[order.id!] || order.status || 'STATUS' }}
+                <span class="dropdown-icon">▼</span>
+              </button>
+              <div class="dropdown-menu" 
+                   aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item feito" href="#" (click)="selectStatus($event, order.id, 'FEITO')">FEITO</a>
+                <a class="dropdown-item enviado" href="#" (click)="selectStatus($event, order.id, 'ENVIADO P/ ENTREGA')">ENVIADO P/ ENTREGA</a>
+                <a class="dropdown-item entregue" href="#" (click)="selectStatus($event, order.id, 'ENTREGUE')">ENTREGUE</a>
+              </div>
+            </div>
+            <button class="delete-button" (click)="deleteOrder(order.id)">
+              <i class="fas fa-trash"></i> Deletar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

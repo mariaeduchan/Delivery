@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informação para Entrega</title>
+    <link rel="stylesheet" href="info.component.css">
+</head>
+<body>
+    <div class="container">
+        <header>  
+            <button class="voltar" (click)="router.navigate(['/'])">&#8592;</button>
+            <h1>Informação p/ entrega</h1>
+        </header>
+    
+        <form (ngSubmit)="onSubmit()">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="address">Logradouro:</label>
+            <input type="text" id="address" name="address">
+
+            <label for="phone">Telefone:</label>
+            <input type="text" id="phone" name="phone">
+
+            <h3>Forma de pagamento</h3>
+            <div class="payment-options">
+                <label>
+                    <input type="radio" name="payment" value="dinheiro"> Dinheiro
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="cartao"> Cartão
+                </label>
+            </div>
+
+            <h4 for="troco">Troco</h4>
+            <textarea id="troco" name="troco"></textarea>
+
+            <button type="submit" class="btn-finalizar">Finalizar compra</button>
+        </form>
+    </div>
+</body>
+</html>
